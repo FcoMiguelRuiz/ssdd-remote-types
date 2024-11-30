@@ -22,10 +22,11 @@ class Server(Ice.Application):
         """
         factory_servant = Factory()
         adapter = self.communicator().createObjectAdapter("remotetypes")
+        adapter.activate()
         proxy = adapter.add(factory_servant, self.communicator().stringToIdentity("factory"))
         self.logger.info('Proxy: "%s"', proxy)
 
-        adapter.activate()
+        
         self.shutdownOnInterrupt()
         self.communicator().waitForShutdown()
         return 0
