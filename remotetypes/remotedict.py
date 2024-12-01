@@ -29,7 +29,8 @@ class RemoteDict(rt.RDict):
             self.escribir_diccionario()
 
         except json.JSONDecodeError:
-            raise ValueError()
+            self._storage_ = []
+            self.escribir_diccionario()
 
         identity = Ice.Identity(identifier, "RemoteDict")
         adapter.add(self, identity)

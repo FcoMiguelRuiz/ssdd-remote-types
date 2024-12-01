@@ -10,7 +10,7 @@ def main():
             raise RuntimeError("Invalid proxy for Factory.")
 
         print("\n=== Testing RemoteDict ===")
-        dict_proxy = factory.get(rt.TypeName.RDict, "test_dict")
+        dict_proxy = factory.get(rt.TypeName.RDict, "test")
         print(f"RemoteDict proxy: {dict_proxy}")
         remote_dict = rt.RDictPrx.checkedCast(dict_proxy)
         if not remote_dict:
@@ -30,7 +30,7 @@ def main():
             dict_count += 1
 
         print("\n=== Testing RemoteList ===")
-        list_proxy = factory.get(rt.TypeName.RList, "test_list")
+        list_proxy = factory.get(rt.TypeName.RList, "test")
         print(f"RemoteList proxy: {list_proxy}")
         remote_list = rt.RListPrx.checkedCast(list_proxy)
         if not remote_list:
@@ -50,7 +50,7 @@ def main():
             list_count += 1
 
         print("\n=== Testing RemoteSet ===")
-        set_proxy = factory.get(rt.TypeName.RSet, "test_set")
+        set_proxy = factory.get(rt.TypeName.RSet, "test")
         print(f"RemoteSet proxy: {set_proxy}")
         remote_set = rt.RSetPrx.checkedCast(set_proxy)
         if not remote_set:

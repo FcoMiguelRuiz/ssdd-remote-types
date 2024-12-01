@@ -25,7 +25,8 @@ class RemoteList(rt.RList):
             self.escribir_lista()
 
         except json.JSONDecodeError:
-            raise ValueError()
+            self._storage_ = []
+            self.escribir_lista()
 
         identity = Ice.Identity(identifier, "RemoteList")
         adapter.add(self, identity)
