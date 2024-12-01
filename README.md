@@ -68,3 +68,19 @@ package is loaded by Python. It makes your life much easier, as you don't need t
 or submodule that you define.
 
 The code loading the Slice is inside the `__init__.py` file.
+
+## Uso del proyecto
+
+Para lanzar y utilizar el proyecto se recomienda utilizar un entorno virtual usando el comando  "python3 -m venv venv" 
+para crearlo y usando el comando "source venv/bin/activate" para activarlo.
+El proyecto cuenta con un conjuto de documentos .py que son utilizados para el funcionamiento del servidor y
+un documento cliente.py que prueba el funcionamiento del mismo haciendo peticiendo de creación de los distintos tipos remotos
+y recorriendolos con los distintos iteradores implementados.
+El servidor al lanzarse y aceptar peticiones de creación de distintas distintas instancias de objetos crea archivos .json 
+que se encuentran en la carpeta almacen si esta carpeta no existe el propio servidor la crea para almacenar 
+los .json que se creen durante la ejecución.
+Para crear las instancias se les asigna una id, elegida por el cliente. Pueden existir una instancia de cada tipo remoto,
+pues al crear la instancia se concatena al nombre del objeto json una etiqueta _dict, _set y _list para diferenciar los tipos.
+Si un .json con uan combinación de tipo e id ya existía previamente en el servidor esté cargará la información del
+objeto creado previamente, en el caso de que el archivo este corrupto o no tenga el formato adecuado el servidor lo 
+sobreescribirá para evitar errores de lectura y escritura
