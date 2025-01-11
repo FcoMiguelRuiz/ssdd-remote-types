@@ -84,3 +84,19 @@ pues al crear la instancia se concatena al nombre del objeto json una etiqueta _
 Si un .json con uan combinación de tipo e id ya existía previamente en el servidor esté cargará la información del
 objeto creado previamente, en el caso de que el archivo este corrupto o no tenga el formato adecuado el servidor lo 
 sobreescribirá para evitar errores de lectura y escritura
+
+## Uso del proyecto entregable 2
+
+Al igual que con el anterior entregable se hará uso de entorno virtual.
+Este entregable cuenta con tres documentos docker-compose.yml que almacena la configuración de nuestro servidor docker
+que utilizaremos cuando lancemos el comando "docker-compose up -d"
+Un documento producer.py que será el encargado de lanzar los mensajes al servidor
+Y un documento clienteKafka.py que gestionará las respuestas que da el servidor a los mensajes enviados por el productor
+y las almacenará en un nuevo topic llamado responses
+Para lanzar nuestro cliente ejecutaremos el comando python3 clientekafka.py y 
+para ejecutar nuestro productor ejecutaremos el comando python3 productor.py con los argumentos que queramos introducir al mensaje
+Las opciones son el servidor al que vamos a enviar el mensaje, el topic al que lo vammos a enviar, el id de la operación,
+el identificador del objeto igual que en la practica uno, el tipo de objeto sobre el que vamos a operar, 
+la operación que queremos realizar y los argumentos entre '{}' separdos por , indicando primero el atributo y luego el valor
+separados por : ambos entre "".
+Ejemplo: " python3 producer.py localhost:9092 main_topic 2 test2 RDict getItem '{"key": "key1"}' "
