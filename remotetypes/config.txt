@@ -1,0 +1,6 @@
+KAFKA_BROKER=localhost:9092
+INPUT_TOPIC=main_topic
+OUTPUT_TOPIC=responses
+GROUP_ID=Francisco_Ruiz
+OFFSET=earliest
+sahdasndjlaskdjajfmañdncjgsdñfjhkldñj

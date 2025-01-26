@@ -93,6 +93,8 @@ que utilizaremos cuando lancemos el comando "docker-compose up -d"
 Un documento producer.py que será el encargado de lanzar los mensajes al servidor
 Y un documento clienteKafka.py que gestionará las respuestas que da el servidor a los mensajes enviados por el productor
 y las almacenará en un nuevo topic llamado responses
+La configuración del cliente se encuentra en el documento config.txt en caso de que este no se encuentre
+el cliente creaŕa uno con valores predeterminados
 Para lanzar nuestro cliente ejecutaremos el comando python3 clientekafka.py y 
 para ejecutar nuestro productor ejecutaremos el comando python3 productor.py con los argumentos que queramos introducir al mensaje
 Las opciones son el servidor al que vamos a enviar el mensaje, el topic al que lo vammos a enviar, el id de la operación,
